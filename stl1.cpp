@@ -43,6 +43,5 @@ node st1=new node("gladingi",21,91.0,"");
 //best way
 
 //one can use any name instead of "node"
-
   return 0;
 }
