@@ -43,7 +43,8 @@ st1.doub=91.0;
 //naive way
 
 //best way
-node st1=new node("gladingi",21,91.0,"");
+node *st1=new node("gladingi",21,91.0,"");
+node st1=node("gladingi",21,91.0,"");
 //best way
 
 //one can use any name instead of "node"
@@ -83,14 +84,14 @@ node st1=new node("gladingi",21,91.0,"");
 
       //method of traversing through an array and printing all the elements
         array<int,5>arr={1,2,3,4,5,6};
-        for(auto it:arr.begin();it!=arr.end();it++){
+        for(auto it=arr.begin();it!=arr.end();it++){
           cout<<*it<<", ";
         }
         //following two methods are used to print the array in reverse order
-        for(auto it:arr.rbegin();it!=arr.rend();it++){
+        for(auto it=arr.rbegin();it!=arr.rend();it++){
           cout<<*it<<", ";
         }
-        for(auto it:arr.end()-1;it>=arr.begin(),it--){
+        for(auto it=arr.end()-1;it>=arr.begin(),it--){
           cout<<*it<<", ";
         }
         //one can replace "!=" with ">" (greater than)
