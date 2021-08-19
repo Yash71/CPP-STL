@@ -42,5 +42,40 @@ int main(){
     }
 
 // ordered set
+
+//unordered set
+  unordered_set<int> st;
+  st.insert(2);
+  st.insert(3);
+  st.insert(1);
+  //all the functionalites are similar to ordered set
+  //average time complexity is O(1)
+//unordered set
+
+//multiset
+  multiset<int> ms;
+  ms.insert(1);
+  ms.insert(1);
+  ms.insert(2);
+  ms.insert(2);
+  ms.insert(3);
+  ms.insert(4);
+  //ms->{1,1,2,2,3,4}
+  
+  ms.erase(2); // all the instances of 2 will be erased.
+  ms.clear(); //deletes the entire set
+  ms.erase(ms.begin(),ms.end()); //deletes the entire set
+  ms.erase(ms.find(2)); //deletes the first instance of 2  
+  //print the multiset
+      for(auto it=ms.begin();it!=ms.end();it++){
+        cout<<*it<<", ";
+      }
+        //---OR---
+      for(auto it:ms){
+        cout<<it<<endl;
+      }
+//multiset
+
+
 return 0;
 }
