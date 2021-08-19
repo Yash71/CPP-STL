@@ -65,7 +65,9 @@ int main(){
   ms.erase(2); // all the instances of 2 will be erased.
   ms.clear(); //deletes the entire set
   ms.erase(ms.begin(),ms.end()); //deletes the entire set
-  ms.erase(ms.find(2)); //deletes the first instance of 2  
+  ms.erase(ms.find(2)); //deletes the first instance of 2 
+
+  ms.count(2); //finds the number of instances of 2
   //print the multiset
       for(auto it=ms.begin();it!=ms.end();it++){
         cout<<*it<<", ";
@@ -75,6 +77,69 @@ int main(){
         cout<<it<<endl;
       }
 //multiset
+
+//key value
+//map
+  //yash -->2
+  //arshi --> 3
+  //prem --> 5
+  
+  map<string,int>mpp;
+  mpp["yash"]=2;
+  mpp["arshi"]=3;
+  mpp["prem"]=5;
+  //a map is always sorted according to the keys
+  //a map only stores unique keys
+
+  mpp.emplace("yash",2); // mpp.["yash"]=2;
+  mpp.erase("yash"); //mpp.erase(key)
+  mpp.erase(mpp.begin()); //erases the first element in map
+  mpp.clear(); //empties the whole map
+  auto it=mpp.find("yash");// points to where yash is located
+  
+  // to check if the map is empty of not
+  if(mpp.empty()){
+    cout<<"yes, it is empty";
+  }
+  mpp.count("yash"); //always return 1 as it stores unique keys
+
+  //printing map
+    for(auto it:mpp){
+      cout<<it.first<<" "<<it.second<<endl; //it.first prints the key and it.second prints the value 
+    }
+    for(auto it=mpp.begin();it!=mpp.end();it++){
+      cout<<it->first<<" "<<it->second<<endl;
+    }
+//map
+
+//unordered map
+  unordered_map<int,int>mpp;
+  //O(1) in almost all cases
+  //O(n) in the worst case, where n is the container size
+
+//unordered map
+
+//Pair Class
+  pair<int,int> pr={1,2};
+  pair<pair<int,int>,int> pr1 ={{1,2},2};
+  cout<<pr1.first.second<<endl; // prints 2
+
+  pair<pair<int,int>,pair<int,int>>pr2={{1,2},{2,5}};
+  cout<<pr2.first.first<<endl; //prints 1
+  cout<<pr2.second.second<<endl; //prints 5
+
+  vector<pair<int,int>> vec;
+  set<pair<int,int>> st;
+  map<pair<int,int>,int> mpp;
+//Pair Class
+
+//summary
+//map-> sorted, unique keys
+//unorderd map-> unsorted, unique keys
+//multimap-> sorted, multiple keys
+
+
+
 
 
 return 0;
