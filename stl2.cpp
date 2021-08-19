@@ -139,6 +139,10 @@ int main(){
 //multimap-> sorted, multiple keys
 
 //stack
+  //----------------------------------------------
+    //  functions --> push() pop() empty() top() size() 
+    //  T.C. of every function= O(1)
+  //----------------------------------------------
   stack<int> st; //LIFO (last in, first out)
   st.push(2);
   st.push(4);
