@@ -166,7 +166,126 @@ int main(){
     cout<<sk.top()<<endl;
   }
 //stack
+//queue
+  queue<int> q; //First in First Out (FIFO)
+  q.push(1);
+  q.push(2);
+  q.push(8);
+  q.push(3);
+  q.push(6);
 
+  cout<<q.front(); //prints 1
+  q.pop();
+  cout<<q.front(); //prints 5
 
+  // to delete entire queue
+    while(!q.empty()){
+      q.pop();
+    }
+  //every operation is O(1) but deletion takes linear time
+//queue
+//priority_queue
+  //stores all the elements in sorted order(descending) in O(logn) time
+
+//priority_queue
+  priority_queue<int> pq;
+  pq.push(1);
+  pq.push(5);
+  pq.push(2);
+  pq.push(7);
+  // {7,5,2,1}
+  cout<<pq.top(); //prints 7
+  pq.pop();
+  cout<<pq.top(); //prints 5
+
+  priority_queue<pair<int,int>> pq;
+  pq.push(1,5);
+  pq.push(1,6);
+  pq.push(1,7);
+  //{(1,7),(1,6),(1,5)}
+
+  //minimum priority queue with int data type
+  priority_queue<int,vector<int>,greater<int>>> pq;
+  // for any other data type, replace every int with the desired data type in the above decalaration
+  pq.push(1)
+  pq.push(4)
+  pq.push(3)
+  pq.push(5)
+   cout<<pq.top()<<endl; //prints 1
+//priority_queue
+//dequeue
+  dequeue<int> dq;
+    //push_front()
+    //push_back()
+    //pop_front()
+    //pop_back()
+    //begin, end, rbegin, rend
+    //size
+    //clear
+    //empty
+    //at
+//dequeue
+//list
+  list<int> ls;
+  //push_front()
+    //push_back()
+    //pop_front()
+    //pop_back()
+    //begin, end, rbegin, rend
+    //size
+    //clear
+    //empty
+    //at
+    //remove --> O(1)
+    ls.push_front(1);
+    ls.push_front(2);
+    ls.remove(2); // takes O(1)
+//list
+
+//--------Home Work---------
+// Given n elements, print the elements that occurs maximum number fo times
+
+//input
+//5
+//1 3 3 3 2
+
+//output
+//3
+
+int n;
+cin>>n;
+map<int,int> mp;
+int max=0;
+for(int i=0;i<n;i++){
+  int x;
+  cin>>x;
+  mpp[x]++;
+  if(mpp[x]>mpp[max]){
+    max=x;
+  }
+}
+cout<<max<<endl;
+
+//given n elements, print all elements in sorted order
+//input
+//n=6
+// 5 6 3 2 3 5
+//output
+//2 3 3 5 6 6
+
+int n;
+cin>>n;
+multiset<int> ms;
+for(int i=0;i<n;i++){
+  int xl
+  cin>>x;
+  ms.insert(x);
+}
+for(auto it:ms){
+  cout<<it<<endl;
+}
+//--------Home Work---------
 return 0;
 }
+
+
