@@ -138,8 +138,34 @@ int main(){
 //unorderd map-> unsorted, unique keys
 //multimap-> sorted, multiple keys
 
+//stack
+  stack<int> st; //LIFO (last in, first out)
+  st.push(2);
+  st.push(4);
+  st.push(3);
+  st.push(1);
 
+  cout<<st.top() //prints 1
+  st.pop(); //deletes the last entered element (1)
+  cout<<st.top(); //prints 3
+  st.pop(); //deletes (3)
+  cout<<st.top(); //prints 4
 
+  bool flag=st.empty(); //returns true if stack is empty
+
+  //deletes the entire stack
+    while(!st.empty()){
+      st.pop();
+    }
+  cout<<st.size()<<endl; //prints the number of elements in the stack
+
+  stack<int> sk;
+  cout<<sk.top()<<endl; //throws an error
+  // to avoid errors, use an if statement before calling "top" function
+  if(!st.empty()){
+    cout<<sk.top()<<endl;
+  }
+//stack
 
 
 return 0;
