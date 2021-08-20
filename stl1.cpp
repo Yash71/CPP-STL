@@ -10,7 +10,7 @@ namespace cd{
 //max size of an array globally --> 10^7 (int,char,double)
   int arr[10000000];
 //max size of array -->10^8 (bool)
-  bool arr[100000000]
+  bool arr[100000000];
 int main(){
   double val =10.0;
   cout<<val<<endl; //prints 10

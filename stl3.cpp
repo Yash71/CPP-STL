@@ -56,7 +56,6 @@ int main(){
   //Reverse
   reverse(arr,arr+n);
   reverse(vec.begin(),vec.end());
-  return 0;
 
   // maximum/minumum elements in any index range
 
@@ -114,17 +113,119 @@ int main(){
         }
       }
       cout<<in;
+    //basic implementation
 
-      auto it=find(arr,arr+n,2); //returns an itterator pointing to the first instance of the element
+    auto it=find(arr,arr+n,2); //returns an itterator pointing to the first instance of the element
+    int ind= it-arr;
 
-      //"it" always returns the memory address of the element, to get the index of the element subtract begin() from it
-
-      int ind= it-arr;
-
-      auto itt=find(vec.begin(),vec.end(),2);
-      int indx=itt-vec.begin();
-      
+    //"it" always returns the memory address of the element, to get the index of the element subtract begin() from it
 
 
+    auto itt=find(vec.begin(),vec.end(),2);
+    int indx=itt-vec.begin();
 
+  //binary search
+    //this stl only works on sorted arrays
+    // returns true or false
+    // works in logn complexity
+    bool res= binary_search(arr, arr+n, 2);
+    bool ress=binary_search(vec.begin(),vec.end(),4);
+  
+  //lower_bound function
+    //returns an iterator pointing to the first element which is not less than x
+    //works on sorted array
+    //works in logn time complexity
+    auto it=lower_bound(arr, arr+n, x);
+    ind=it-arr;
+
+    auto it=lower_bound(vec.begin(), vec.end(), x);
+    ind=it-vec.begin();
+
+  //upper_bound function
+    // returns an iterator pointing to the first element which is just greater than x
+
+    auto it=upper_bound(arr, arr+n, x);
+    ind=it-arr;
+
+    auto it=upper_bound(vec.begin(),vec.end(), x);
+    ind=it-vec.begin();
+
+  //Q- Find the first index where the element x lies
+      //find() can be used but it takes O(n) time 
+      //the array is sorted
+  //----solution-----
+    int n;
+    cin>>n;
+    for(int i=0;i!=n;i++){
+      cin>>arr[i];
+    }
+    int x;
+    cin>>x;
+    //1st way
+    if(binary_search(arr, arr+n, x)==true){
+      cout<<lower_bound(arr, arr+n, x)-arr;
+    }
+    else cout<<"doesn't exist";
+
+    //2nd way
+    int ind=lower_bound(arr, arr+n, x)-arr;
+    if(ind!=n && arr[ind]==x){
+      cout<<"index: "<<ind<<endl;
+    }
+    else{
+      cout<<"not found";
+    }
+  //----solution-----
+
+  //Q- Find the last occurence of x in an array
+    //array is sorted
+  //----solution-----
+    int n;
+    cin>>n;
+    for(int i=0;i!=n;i++){
+      cin>>arr[i];
+    }
+    int x;
+    cin>>x;
+
+    int ind=upper_bound(arr,arr+n,x)-arr;
+    ind-=1;
+    if(ind>=0 && arr[ind]==x){
+      cout<<ind;
+    }
+    else cout<<"doesn't exists";
+
+  //----solution-----
+  //Q- Find the number of times x appears in array
+    //array is sorted
+  //----solution-----
+    int n;
+    cin>>n;
+    for(int i=0;i!=n;i++){
+      cin>>arr[i];
+    }
+    int x;
+    cin>>x;
+
+    int count= upper_bound(arr,arr+n,x)-lower_bound(arr,arr+n,x);
+
+  //----solution-----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  return 0;
 }
