@@ -211,7 +211,26 @@ int main(){
 
   //----solution-----
 
+  // Next permutation 
+    string s="abc";
+    //all permutations are as follows:
+      //abc
+      //acb
+      //bac
+      //cab
+      //cba
+      //time complexity is O(n)
+    bool res=next_permutation(s.begin(),s.end()); //returns true if it gets to the next permutation
 
+    //prints all the permutations
+      string sr="bca";
+      sort(s.begin(),s.end()); //sorts the string and makes it "abc"
+      do{
+        cout<<s<<endl;
+      }while(next_permutation(s.begin(),s.end()));
+
+  // Previous permutation
+    bool res=prev_permutation(s.begin(),s.end());
 
 
 
