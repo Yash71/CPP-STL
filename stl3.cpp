@@ -232,19 +232,29 @@ int main(){
   // Previous permutation
     bool res=prev_permutation(s.begin(),s.end());
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
+  //comparators
+    bool comp(int el1,int el2){
+      if(el1<=el2){
+        return true;
+      }
+      return false;
+    }
+  // sort this array in such a way that the smaller element in pair is smaller, and if the first elements are equal, sort them according to second element in descending order
+  bool comp(pair<int,int>el1,pair<int,int>el2) {
+    if(el.first<e2.first){
+      return true;
+    }
+    if(el1.first==el2.first){
+      if(el1.second>el2.second){
+        return true;
+      }
+    }
+    return false;
+  }
+  //descending order
+  //greater<int> is an inbuilt comparator which works only if you wanna do this in descending order
+  sort(arr,arr+n,greater<int>);
+  sort(arr,arr+n,comp); 
 
   return 0;
 }
