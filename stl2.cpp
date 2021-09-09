@@ -43,13 +43,18 @@ int main(){
 
 // ordered set
 
-//unordered set
+//unordered set (does not allow duplicates)
+  //It uses hashing
   unordered_set<int> st;
   st.insert(2);
   st.insert(3);
   st.insert(1);
   //all the functionalites are similar to ordered set
-  //average time complexity is O(1)
+  //other way of deleting an element
+  auto it= st.find(2);
+  st.erase(it);
+
+//average time complexity is O(1)
 //unordered set
 
 //multiset
@@ -79,7 +84,8 @@ int main(){
 //multiset
 
 //key value
-//map
+//map (based on red black tree)
+//O(logn) on average
   //yash -->2
   //arshi --> 3
   //prem --> 5
@@ -91,7 +97,7 @@ int main(){
   //a map is always sorted according to the keys
   //a map only stores unique keys
 
-  mpp.emplace("yash",2); // mpp.["yash"]=2;
+  mpp.emplace({"yash",2}); // mpp.["yash"]=2;
   mpp.erase("yash"); //mpp.erase(key)
   mpp.erase(mpp.begin()); //erases the first element in map
   mpp.clear(); //empties the whole map
@@ -112,7 +118,7 @@ int main(){
     }
 //map
 
-//unordered map
+//unordered map (based on hashing)
   unordered_map<int,int>mpp;
   //O(1) in almost all cases
   //O(n) in the worst case, where n is the container size
