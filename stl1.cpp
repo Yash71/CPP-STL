@@ -50,6 +50,9 @@ node st1=node("gladingi",21,91.0,"");
 //one can use any name instead of "node"
 
   //------------------------------------------------------------Arrays-------------------------------------------------------------------
+//   array containers have their own size. There is no need to pass the size of the arrays container separately as a function arguments
+  
+  
     //max size of an array inside int main() --> 10^6 (int,double, char)
       int arr[1000000];
     //max size of an array --> 10^7 (bool)
@@ -67,12 +70,14 @@ node st1=node("gladingi",21,91.0,"");
         arr.fill{10}; //-->{10,10,10,10,10}
 
         arr.at(index); // -->access the value of the defined index
-
+        get<0>(arr); // prints the value at index 0
+        arr.size(); arr.max_size(); // prints the maximum no. of elements that can be stored in an array
+      
       //print the array using "at" function
         for(int i=0;i<5;i++){
           cout<<arr.at(i)<<", ";
         }
-
+  
     //iterators
       // begin() end() rbegin() rend()
 
@@ -139,11 +144,11 @@ node st1=node("gladingi",21,91.0,"");
       vector<int> vec3(vec2);
 
       vector<int> vec4;
-      vec4.pushback(1); 
-      vec4.pushback(2); 
-      vec4.pushback(3);    
-      vec4.pushback(4); 
-      vec4.pushback(5); 
+      vec4.push_back(1); 
+      vec4.push_back(2); 
+      vec4.push_back(3);    
+      vec4.push_back(4); 
+      vec4.push_back(5); 
       vector<int> vec5(vec4.begin(),vec4.begin()+2); // ->{1,2}
 
     // one can use emplace_back() instead of push_back() as its slightly faster
